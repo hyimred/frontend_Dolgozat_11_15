@@ -30,7 +30,6 @@ function feladat01() {
 
 function feladat02() { for (let i = 0; i < quotes.quotes.length; i++) {
     list[i] = quotes.quotes[i].quote;
-    author[i] = quotes.quotes[i].author;
 } }
 
 function feladat03() {
@@ -41,6 +40,15 @@ function feladat03() {
     }
     document.getElementById('output').innerHTML = "<p>"+listLen.join(", ")+"</p>";
 }
-function feladat04() { }
+function feladat04() {
+    let input = document.getElementById('input').value;
+    let muvek = 0;
+    for (let i = 0; i < quotes.quotes.length; i++) {
+        if (quotes.quotes[i].author == input) {
+            muvek++;
+        }
+    }
+    document.getElementById('output').innerHTML = input + ": " + muvek + " db mű."
+}
 
 });
